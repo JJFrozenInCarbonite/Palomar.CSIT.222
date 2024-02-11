@@ -49,14 +49,19 @@ a comparable car from the Web. Run your program twice, using today’s gas price
 15,000 miles per year. Include pseudocode and the program runs with your assignment
 
 ### Psuedo Code
-<style type="text/css">
-    ol { list-style-type: lower-alpha; }
-<ol>
-    <li>Get the price of the car from the user</li>
-    <li>Get the user's estimate mileage</li>
-    <li>Get the estimated price of gas from the user</li>
-    <li>D. Get the estimated resale value after 5 years from the user</li>
-    <li>Total Cost = (a - d) + (b * c)</li>
-    <li>Display the value from e to the user</li>
-</ol>
-</style>
+
+##### Variables
+###### Constants
+* term = the length of ownership
+
+###### Doubles
+* newPrice - The price of the vehicle when new
+* usedPrice - The price of the vehicle after 5 years
+* vehicleMileage - Average Miles / Gallon of the vehicle
+* annualMileage - The user's estimated annual mileage
+* termCost - The estimated cost of the vehicle over the term
+
+##### Math
+* termCost = (newPrice - usedPrice) + ((annualMileage * vehicleMileage) * term)
+
+Obtain the variables from the user, perform the math, and display the result to the user
