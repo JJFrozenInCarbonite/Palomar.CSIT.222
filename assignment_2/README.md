@@ -1,8 +1,8 @@
-###Assigment 2
+### Assigment 2
 
 ---
 
-##P2.1 
+## P2.1 
 
 #Problem Statement
 Easter Sunday is the first Sunday after the first full moon of spring. To compute
@@ -29,7 +29,7 @@ user for a year and prints out the month and day of Easter Sunday.
 
 ---
 
-##P2.4
+## P2.4
 
 #Problem Statement
 Write a program that helps a person decide whether to buy a hybrid car. Your program’s
