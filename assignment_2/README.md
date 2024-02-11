@@ -1,4 +1,4 @@
-### Assigment 2
+# Assigment 2
 
 ---
 
@@ -37,13 +37,14 @@ inputs should be:
 * The cost of a new car
 * The estimated miles driven per year
 * The estimated gas price
-* The estimated resale value after 5 years
-Compute the total cost of owning the car for 5 years. (For simplic ity, we will not take the
+* The estimated resale value after 5 years.
+
+Compute the total cost of owning the car for 5 years. (For simplicity, we will not take the
 cost of financing into account.) Obtain realistic prices for a new and used hybrid and
 a comparable car from the Web. Run your program twice, using today’s gas price and
 15,000 miles per year. Include pseudocode and the program runs with your assignment
 
-#Psuedo Code
+### Psuedo Code
 a. Get the price of the car from the user
 b. Get the user's estimate mileage
 c. Get the estimated price of gas from the user
