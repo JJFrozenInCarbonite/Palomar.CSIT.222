@@ -1,7 +1,6 @@
 # Assignment 2
-___
 
-**P2.1**
+## P2.1
 
 ### Problem Statement
 Easter Sunday is the first Sunday after the first full moon of spring. To compute
@@ -25,12 +24,10 @@ Then Easter falls on day p of month n. For example, if y is 2001:
 <br>&emsp;b = 20, c = 1 h = 18 r = 6 p = 15
 <br>&emsp;d = 5, e = 0 j = 0, k = 1
 
-Therefore, in 2001, Easter Sunday fell on April 15. Write a program that prompts the\n
+Therefore, in 2001, Easter Sunday fell on April 15. Write a program that prompts the
 user for a year and prints out the month and day of Easter Sunday.
 
----
-
-***2.4**
+## 2.4
 
 ### Problem Statement
 Write a program that helps a person decide whether to buy a hybrid car. Your program’s
