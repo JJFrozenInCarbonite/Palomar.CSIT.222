@@ -1,10 +1,9 @@
 # Assigment 2
-
----
+___
 
 ## P2.1 
 
-#Problem Statement
+### Problem Statement
 Easter Sunday is the first Sunday after the first full moon of spring. To compute
 the date, you can use this algorithm, invented by the mathematician Carl Friedrich
 Gauss in 1800:
@@ -20,6 +19,7 @@ Gauss in 1800:
 tient.
 10. Divide h - m + r + 90 by 25 to get a quotient n. Ignore the remainder.
 11. Divide h - m + r + n + 19 by 32 to get a remainder p. Ignore the quotient.
+
 Then Easter falls on day p of month n. For example, if y is 2001:
 a = 6 g = 6 m = 0 n = 4
 b = 20, c = 1 h = 18 r = 6 p = 15
@@ -31,7 +31,7 @@ user for a year and prints out the month and day of Easter Sunday.
 
 ## P2.4
 
-#Problem Statement
+### Problem Statement
 Write a program that helps a person decide whether to buy a hybrid car. Your program’s
 inputs should be:
 * The cost of a new car
