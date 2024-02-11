@@ -26,6 +26,7 @@ Then Easter falls on day p of month n. For example, if y is 2001:
 
 Therefore, in 2001, Easter Sunday fell on April 15. Write a program that prompts the
 user for a year and prints out the month and day of Easter Sunday.
+___
 
 ## 2.4
 
