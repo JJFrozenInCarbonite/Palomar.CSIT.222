@@ -59,9 +59,10 @@ a comparable car from the Web. Run your program twice, using today’s gas price
 * usedPrice - The price of the vehicle after 5 years
 * vehicleMileage - Average Miles / Gallon of the vehicle
 * annualMileage - The user's estimated annual mileage
+* gasPrice - The user's estimated average cost of a gallon of gas over the term 
 * termCost - The estimated cost of the vehicle over the term
 
 ##### Math
-* termCost = (newPrice - usedPrice) + ((annualMileage * vehicleMileage) * term)
+* termCost = (newPrice - usedPrice) + (annualMileage / vehicleMileage * gasPrice * term)
 
 Obtain the variables from the user, perform the math, and display the result to the user

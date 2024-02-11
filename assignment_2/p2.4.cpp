@@ -1,3 +1,4 @@
+#include <iomanip>
 #include <iostream>
 using namespace std;
 
@@ -5,76 +6,61 @@ using namespace std;
  * Assignment 2 - P2.4 - This program computes the total cost of owning a car for 5 years
  * 
  * @author JJ Hoffmann
- * @version 02/10/2024
+ * @version 02/11/2024
  */
-
-/** 
- * Computes numerical month and day of Easter for the provided year.
- * 
- * @param y the target year to be used in for computing the date of Easter
- * @return the address of a two-element array holding the month and day of Easter
-*/
-
-int* computeCost(const int& y) 
-{
-    static int monthDay[2]; // array to hold month and day
-    
-    int a,b,c,d,e,g,h,j,k,m,r,n,p; // local variables for algorithm processing
-
-    a = y % 19;
-    b = y / 100;
-    c = y % 100;
-    d = b / 4;
-    e = b % 4;
-    g = (8 * b + 13) / 25;
-    h = (19 * a + b - d - g + 15) % 30;
-    j = c / 4;
-    k = c % 4;
-    m = (a + 11 * h) / 319;
-    r = (2 * e + 2 * j - k - h + m + 32) % 7;
-    n = (h - m + r + 90) / 25;
-    p = (h - m + r + n + 19) % 32;
-
-    monthDay[0] = n;
-    monthDay[1] = p;
-    return monthDay;
-} 
 
 /**
  *  Main function.
  * 
- * 
  * Takes input from the user and then computes the cost of owning a vehicle over
  * 5 years
  * 
+ * @param term - Length of ownership
+ * @param newPrice - Price of the vehicle when new
+ * @param usedPrice - Price of the vehicle after the term
+ * @param vehicleMileage - Vehicle verage miles / gallon
+ * @param annualMileage - Estimated annual mileage of the user
+ * @param gasPrice - Estimated average price of a gallon of gas over the term
+ * @param termCost - Computed estimated cost of the vehicle over the term
  * @return Program exit status.
 */
 int main() 
 {
+    const double term = 5;
+    
     double 
-        purchasePrice, // vehicle purchase price
-        annualMileage, // estimated annual miles driven
-        gasPrice, // price of gas
-        resaleValue; // estimated resale value
+        newPrice,
+        usedPrice,
+        vehicleMileage,
+        annualMileage,
+        gasPrice,
+        termCost
+        ;
+
+    cout << fixed;
+    cout << setprecision(2);
+        
+    cout << "Let's calculate the cost of your car after 5 years.\n";
+    cout << "First, we'll need to gather some info.\n\n";
     
-    cout << "Let's calculate the cost of your car after 5 years." << endl;
-    cout << "First, we'll need to gather some info." << endl;
-    
-    cout << "What is the purchase price of the car? ";
-    cin >> purchasePrice;
-    
-    cout << "About how many miles do you drive annually? ";
+    cout << "What is the price of the vehicle when new?\n$";
+    cin >> newPrice;
+
+    cout << "What will the estimated price of the vehicle be in " << (int)term << " years?\n$";
+    cin >> usedPrice;
+
+    cout << "What is the vehicles estimated fuel efficiency in miles per gallon?\n";
+    cin >> vehicleMileage;
+
+    cout << "How many miles do you drive in a year?\n";
     cin >> annualMileage;
     
-    cout << "How much does gas cost? ";
+    cout << "What is the average cost of a gallon of gas over the next " << (int)term << " years?\n$";
     cin >> gasPrice;
 
-    cout << "What is the resale value of the car? ";
-    cin >> resaleValue;
-
+    termCost = (newPrice - usedPrice) + ((annualMileage / vehicleMileage) * term);
     
-
-
+    cout << "\nThe estimated cost of your vehicle over " << (int)term << " years is $" << termCost;
 
     return 0;
 }
