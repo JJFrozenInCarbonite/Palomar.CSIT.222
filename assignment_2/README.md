@@ -56,7 +56,7 @@ a comparable car from the Web. Run your program twice, using today’s gas price
 
 ###### Doubles
 * newPrice - The price of the vehicle when new
-* usedPrice - The price of the vehicle after 5 years
+* usedPrice - The price of the vehicle after the term
 * vehicleMileage - Average Miles / Gallon of the vehicle
 * annualMileage - The user's estimated annual mileage
 * gasPrice - The user's estimated average cost of a gallon of gas over the term 
