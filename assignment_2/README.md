@@ -6,6 +6,7 @@
 Easter Sunday is the first Sunday after the first full moon of spring. To compute
 the date, you can use this algorithm, invented by the mathematician Carl Friedrich
 Gauss in 1800:
+
 1. Let y be the year (such as 1800 or 2001).
 2. Divide y by 19 and call the remainder a. Ignore the quotient.
 3. Divide y by 100 to get a quotient b and a remainder c.
@@ -29,11 +30,14 @@ user for a year and prints out the month and day of Easter Sunday.
 
 ---
 
-## 2.4
+# Assignment 2
+
+## P2.4
 
 ### Problem Statement
 Write a program that helps a person decide whether to buy a hybrid car. Your program’s
 inputs should be:
+
 * The cost of a new car
 * The estimated miles driven per year
 * The estimated gas price
