@@ -21,9 +21,9 @@ tient.
 11. Divide h - m + r + n + 19 by 32 to get a remainder p. Ignore the quotient.
 
 Then Easter falls on day p of month n. For example, if y is 2001:
-<br>&ensp;a = 6 g = 6 m = 0 n = 4
-<br>&ensp;b = 20, c = 1 h = 18 r = 6 p = 15
-<br>&ensp;d = 5, e = 0 j = 0, k = 1
+<br>&emsp;a = 6 g = 6 m = 0 n = 4
+<br>&emsp;b = 20, c = 1 h = 18 r = 6 p = 15
+<br>&emsp;d = 5, e = 0 j = 0, k = 1
 
 Therefore, in 2001, Easter Sunday fell on April 15. Write a program that prompts the\n
 user for a year and prints out the month and day of Easter Sunday.
