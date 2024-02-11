@@ -49,9 +49,14 @@ a comparable car from the Web. Run your program twice, using today’s gas price
 15,000 miles per year. Include pseudocode and the program runs with your assignment
 
 ### Psuedo Code
-a. Get the price of the car from the user
-b. Get the user's estimate mileage
-c. Get the estimated price of gas from the user
-d. Get the estimated resale value after 5 years from the user
-e. Total Cost = (a - d) + (b * c)
-f. Display the value from e to the user
+<style type="text/css">
+    ol { list-style-type: lower-alpha; }
+<ol>
+    <li>Get the price of the car from the user</li>
+    <li>Get the user's estimate mileage</li>
+    <li>Get the estimated price of gas from the user</li>
+    <li>D. Get the estimated resale value after 5 years from the user</li>
+    <li>Total Cost = (a - d) + (b * c)</li>
+    <li>Display the value from e to the user</li>
+</ol>
+</style>
