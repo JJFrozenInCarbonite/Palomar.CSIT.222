@@ -100,10 +100,8 @@ int computeCheckDigit(const std::string &zipStr) {
  */
 std::string generateBarCode(const std::string &zipStr, int checkDigit) {
     std::string barCode = "|";
-    for (char digit : zipStr) {
-        std::cout << "digit: " << digit << ", barcode: " << encodeDigit(digit) << std::endl;
+    for (char digit : zipStr)
         barCode += encodeDigit(digit);
-    }
     barCode += encodeDigit('0' + checkDigit);
     barCode += "|";
     return barCode;
