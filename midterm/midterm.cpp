@@ -217,6 +217,11 @@ public:
         return Polynomial(resultTerms); 
     }
 
+    /**
+     * Overloads the = operator to assign the value of one Polynomial object to another.
+     * @param rightPoly The Polynomial to assign to this one
+     * @return A reference to this Polynomial after the assignment
+     */
     Polynomial& operator=(const Polynomial& rightPoly) {
         if (this == &rightPoly) {
             return *this;
@@ -227,9 +232,9 @@ public:
     }
 
     /**
-     * Overloads the = operator to assign the value of one Polynomial object to another.
+     * Overloads the == operator to determine if the the value of one Polynomial object is equal to another.
      * @param rightPoly The Polynomial to assign to this one
-     * @return A reference to this Polynomial after the assignment
+     * @return true if the two Polynomial objects are equal, false otherwise
      */
     bool operator==(const Polynomial& rightPoly) const {
         if (polyterm.size() != rightPoly.polyterm.size()) {
@@ -361,6 +366,9 @@ std::ostream& operator<<(std::ostream& os, const Polynomial& p) {
  */
 void print_menu() {
     std::cout << std::endl;
+    std::cout << "====================================\n";\
+    std::cout << "Polynomial Calculator\n";
+    std::cout << "------------------------------------\n";\
     std::cout << "The following operations are available:\n";
     std::cout << " 1. Clear polynomials\n";
     std::cout << " 2. Evaluate polynomials\n";
@@ -370,7 +378,10 @@ void print_menu() {
     std::cout << " 6. Subtract two polynomials\n";
     std::cout << " 7. Test polynomial equality\n";
     std::cout << " 8. Multiply two polynomials\n";
+    std::cout << " 9. Swap polynomials\n";
+    std::cout << "---------------------\n";
     std::cout << " 0. Quit\n";
+    std::cout << "====================================\n";\
 }
 
 /**
@@ -387,90 +398,103 @@ char get_user_command() {
 int main() {
     char choice = '\0';
     Polynomial p1, p2;
-
+    std::cout << "====================================\n";\
     std::cout << "Polynomial Calculator\n";
-    std::cout << "---------------------\n";\
+    std::cout << "------------------------------------\n";\
     std::cout << "Polynomial 1:\n";
     p1.inputPolynomial();
     std::cout << "Polynomial 2:\n";
     p2.inputPolynomial();
+    std::cout << "------------------------------------\n";\
 
     do {
         print_menu();
         choice = get_user_command();
+        int selection = 0;
+        Polynomial temp;
         switch (choice) {
-        case '1':
-            p1.clear();
-            p2.clear();
-            std::cout << "\nPolynomials cleared!\n";
-            break;
-        case '2':   
-            std::cout << "\nEnter the value of x: ";
-            double value;
-            std::cin >> value;
-            std::cout << "  Polynomial 1: (" << p1 << ") = " << p1.evaluate(value) << std::endl;
-            std::cout << "  Polynomial 2: (" << p2 << ") = " << p2.evaluate(value) << std::endl;
-            break;
-        case '3':
-            std::cout << "\nPolynomial 1: ";
-            std::cout << p1 << std::endl;
-            std::cout << "Polynomial 2: ";
-            std::cout << p2 << std::endl;
-            break;
-        case '4':
-            {
-                bool sentinel = true;
-                do {
-                    std::cout << "\nUpdate a polynomial:\n";
-                    std::cout << "1. Polynomial 1: " << p1 << "\n";
-                    std::cout << "2. Polynomial 2: " << p2 << "\n";
-                    std::cout << "0. Cancel\n";
-                    std::cout << "Enter your choice: ";
-                    int selection;
-                    std::cin >> selection;
-                    switch (selection) {
-                        case 1:
-                            p1.updateTerm();
-                            sentinel = false;
-                            break;
-                        case 2:
-                            p2.updateTerm();
-                            sentinel = false;
-                            break;
-                        case 0:
-                            sentinel = false;
-                            break;
-                        default:
-                            std::cout << "Invalid selection\n";
-                            break;
-                        }
-                } while (sentinel);
+            case '1':
+                p1.clear();
+                p2.clear();
+                std::cout << "\nPolynomials cleared!\n";
+                break;
+            case '2':   
+                std::cout << "\nEnter the value of x: ";
+                double value;
+                std::cin >> value;
+                std::cout << "  Polynomial 1: (" << p1 << ") = " << p1.evaluate(value) << std::endl;
+                std::cout << "  Polynomial 2: (" << p2 << ") = " << p2.evaluate(value) << std::endl;
+                break;
+            case '3':
+                std::cout << "\nPolynomial 1: ";
+                std::cout << p1 << std::endl;
+                std::cout << "Polynomial 2: ";
+                std::cout << p2 << std::endl;
+                break;
+            case '4':
+                {
+                    bool sentinel = true;
+                    do {
+                        std::cout << "\nUpdate a polynomial:\n";
+                        std::cout << "1. Polynomial 1: " << p1 << "\n";
+                        std::cout << "2. Polynomial 2: " << p2 << "\n";
+                        std::cout << "0. Cancel\n";
+                        std::cout << "Enter your choice: ";
+                        std::cin >> selection;
+                        switch (selection) {
+                            case 1:
+                                p1.updateTerm();
+                                sentinel = false;
+                                break;
+                            case 2:
+                                p2.updateTerm();
+                                sentinel = false;
+                                break;
+                            case 0:
+                                sentinel = false;
+                                break;
+                            default:
+                                std::cout << "Invalid selection\n";
+                                break;
+                            }
+                    } while (sentinel);
+                }
+                break;
+            case '5':
+                std::cout << "\n(" << p1 << ")" << " + (" << p2 << ") == " << p1 + p2 << std::endl;
+                break;
+            case '6':
+                std::cout << "\n(" << p1 << ")" << " - (" << p2 << ") == " << p1 - p2 << std::endl;
+                break;
+            case '7':
+                std::cout << "\n" << p1;
+                if (p1 == p2)
+                    std::cout << " == ";
+                 else 
+                    std::cout << " != ";
+                std::cout << p2 << std::endl;
+                break;
+            case '8':
+                std::cout << "\n(" << p1 << ")" << " * (" << p2 << ") == " << p1 * p2 << std::endl;
+                break;
+            case '9':
+                std::cout << "\nOriginal polynomials:\n";
+                std::cout << "  Polynomial 1: " << p1 << std::endl;
+                std::cout << "  Polynomial 2: " << p2 << std::endl;
+                temp = p1;
+                p1 = p2;
+                p2 = temp;
+                std::cout << "\nSwapped polynomials:\n";
+                std::cout << "  Polynomial 1: " << p1 << std::endl;
+                std::cout << "  Polynomial 2: " << p2 << std::endl;
+                break;
+            case '0':
+                std::cout << "\nGoodbye!\n";
+                break;
+            default:
+                std::cout << "Invalid choice\n";
+                break;
             }
-            break;
-        case '5':
-            std::cout << "\n(" << p1 << ")" << " + (" << p2 << ") == " << p1 + p2 << std::endl;
-            break;
-        case '6':
-            std::cout << "\n(" << p1 << ")" << " - (" << p2 << ") == " << p1 - p2 << std::endl;
-            break;
-        case '7':
-            std::cout << "\n" << p1;
-            if (p1 == p2)
-                std::cout << " == ";
-             else 
-                std::cout << " != ";
-            std::cout << p2 << std::endl;
-            break;
-        case '8':
-            std::cout << "\n(" << p1 << ")" << " * (" << p2 << ") == " << p1 * p2 << std::endl;
-            break;
-        case '0':
-            std::cout << "\nGoodbye!\n";
-            break;
-        default:
-            std::cout << "Invalid choice\n";
-            break;
-        }
     } while (choice != '0');
 
     return 0;
