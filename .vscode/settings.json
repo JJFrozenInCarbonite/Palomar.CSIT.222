@@ -1,9 +1,10 @@
 {
     "files.associations": {
-        "ostream": "cpp",
         "iostream": "cpp",
-        "atomic": "cpp",
+        "new": "cpp",
+        "ostream": "cpp",
         "array": "cpp",
+        "atomic": "cpp",
         "bit": "cpp",
         "*.tcc": "cpp",
         "cctype": "cpp",
@@ -20,6 +21,8 @@
         "cwchar": "cpp",
         "cwctype": "cpp",
         "deque": "cpp",
+        "list": "cpp",
+        "map": "cpp",
         "string": "cpp",
         "unordered_map": "cpp",
         "vector": "cpp",
@@ -39,17 +42,15 @@
         "utility": "cpp",
         "fstream": "cpp",
         "initializer_list": "cpp",
+        "iomanip": "cpp",
         "iosfwd": "cpp",
         "istream": "cpp",
         "limits": "cpp",
-        "new": "cpp",
         "numbers": "cpp",
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp",
-        "map": "cpp",
-        "iomanip": "cpp",
-        "set": "cpp"
-    }
+        "typeinfo": "cpp"
+    },
+    "C_Cpp.default.compilerPath": "C:\\msys64\\ucrt64\\bin\\g++.exe"
 }
