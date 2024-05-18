@@ -1,5 +1,5 @@
 /**
- * Lab 3
+ * Lab 4
  * 
  * Traffic Simulation Lab
  * 
@@ -30,14 +30,6 @@
  * moving vehicles, updating the state of the traffic light, and checking for free spaces
  * on the road.
  * 
- * @author JJ Hoffmann
- * @version 2024-05-05
- */
-/**
- * Lab 3
- * 
- * Traffic Simulation Lab
- *
  * @author JJ Hoffmann
  * @version 2024-05-05
  */
